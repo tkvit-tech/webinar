@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="059797fc-462a-4738-baf7-b8fa9b9fa7da" name="Default Changelist" comment="" />
+    <list default="true" id="059797fc-462a-4738-baf7-b8fa9b9fa7da" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CommentController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +20,9 @@
         <option value="composer.json" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -87,6 +93,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2QgwEJKKP8nJUALde1RY3MR5fpQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -114,7 +121,8 @@
       <workItem from="1685796019532" duration="1473000" />
       <workItem from="1685798170509" duration="1535000" />
       <workItem from="1685800046012" duration="1673000" />
-      <workItem from="1685801864608" duration="1355000" />
+      <workItem from="1685801864608" duration="1824000" />
+      <workItem from="1685803738132" duration="103000" />
     </task>
     <servers />
   </component>
