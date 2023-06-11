@@ -17,6 +17,8 @@
             <div>Заголовок - {{ comment.title }}</div>
             <div>Текст - {{ comment.content }}</div>
             <div><a href="{{ path('single_comment', {'id': comment.id}) }}">просмотр</a> </div>
+            <div><a href="{{ path('delete_comment', {'id': comment.id}) }}">удалить</a> </div>
+            <hr>
         </div>
     {% endfor %}
 </div>

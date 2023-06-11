@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 use App\Entity\Comment;
+use App\Form\CommentType;
 use Doctrine\ORM\EntityManagerInterface;
-use http\Env\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CommentController extends AbstractController
@@ -33,7 +34,49 @@ class CommentController extends AbstractController
     public function create(Request $request, EntityManagerInterface $entityManager)
     {
         $comment = new Comment();
-        $form = $this->createForm(commentType::class, $comment);
+        $form = $this->createForm(CommentType::class, $comment);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            $comment = $form->getData();
+            $comment->setCreatedAt(new \DateTime('now'));
+            $entityManager->persist($comment);
+            $entityManager->flush();
+            return $this->redirectToRoute('comment');
+        }
+
+        return $this->render('comment/form.html.twig', [
+            'form' => $form
+        ]);
     }
 
+    #[Route('/comment/update/{id}', name: 'update_comment')]
+    public function update(Request $request, EntityManagerInterface $entityManager, $id)
+    {
+        $comment = $entityManager->getRepository(Comment::class)->find($id);
+        $form = $this->createForm(CommentType::class,$comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid())
+        {
+            $comment = $form->getData();
+            $comment->setUpdatedAt(new \DateTime('now'));
+            $entityManager->flush();
+            return $this->redirectToRoute('comment');
+        }
+
+        return $this->render('comment/form.html.twig',[
+            'form' => $form
+        ]);
+
+    }
+
+    #[Route('/comment/delete/{id}', name: 'delete_comment')]
+    public function delete(Request $request, EntityManagerInterface $entityManager, $id)
+    {
+        $comment = $entityManager->getRepository(Comment::class)->find($id);
+        $entityManager->remove($comment);
+        $entityManager->flush();
+        return $this->redirectToRoute('comment');
+    }
 }
