@@ -1,23 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CommentController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div id="container">
-    <h2>Комменты</h2>
+<div class="container">
+    <h1>Комменты</h1>
     <a href="{{ path('create_comment') }}">Создать комментарий</a>
     {% for comment in comments %}
-        <div>
-            <div>Автор - {{ comment.author }}</div>
-            <div>Заголовок - {{ comment.title }}</div>
-            <div>Текст - {{ comment.content }}</div>
+        <div class="card bg-success text-white">
+            <div class="">Автор - {{ comment.author }}</div>
+            <div class="">Заголовок - {{ comment.title }}</div>
+            <div class="">Текст - {{ comment.content }}</div>
             <div><a href="{{ path('single_comment', {'id': comment.id}) }}">просмотр</a> </div>
             <div><a href="{{ path('delete_comment', {'id': comment.id}) }}">удалить</a> </div>
+            <div><a href="{{ path('update_comment', {'id': comment.id}) }}">обновить</a> </div>
             <hr>
         </div>
     {% endfor %}

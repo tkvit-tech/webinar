@@ -1,0 +1,7 @@
+section{}
+.carousel-control-prev-icon{
+    background-image: url("/img/1.png");
+}
+.carousel-control-next-icon{
+    background-image: url("/img/2.png");
+}
