@@ -1311,116 +1311,151 @@
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_unicode_ci</CollationName>
     </table>
-    <table id="520" parent="514" name="user">
+    <table id="520" parent="514" name="menu">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <column id="521" parent="518" name="id">
+    <table id="521" parent="514" name="user">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <column id="522" parent="518" name="id">
       <AutoIncrement>4</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="522" parent="518" name="author">
+    <column id="523" parent="518" name="author">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="523" parent="518" name="title">
+    <column id="524" parent="518" name="title">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="524" parent="518" name="content">
+    <column id="525" parent="518" name="content">
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="525" parent="518" name="created_at">
+    <column id="526" parent="518" name="created_at">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="526" parent="518" name="updated_at">
+    <column id="527" parent="518" name="updated_at">
       <DataType>datetime|0s</DataType>
       <Position>6</Position>
     </column>
-    <index id="527" parent="518" name="PRIMARY">
+    <index id="528" parent="518" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="528" parent="518" name="PRIMARY">
+    <key id="529" parent="518" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="529" parent="519" name="version">
+    <column id="530" parent="519" name="version">
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="530" parent="519" name="executed_at">
+    <column id="531" parent="519" name="executed_at">
       <DataType>datetime|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="531" parent="519" name="execution_time">
+    <column id="532" parent="519" name="execution_time">
       <DataType>int(11)|0s</DataType>
       <Position>3</Position>
     </column>
-    <index id="532" parent="519" name="PRIMARY">
+    <index id="533" parent="519" name="PRIMARY">
       <ColNames>version</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="533" parent="519" name="PRIMARY">
+    <key id="534" parent="519" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="534" parent="520" name="id">
+    <column id="535" parent="520" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="535" parent="520" name="email">
-      <DataType>varchar(180)|0s</DataType>
+    <column id="536" parent="520" name="parent_id">
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="536" parent="520" name="roles">
-      <Comment>(DC2Type:json)</Comment>
-      <DataType>longtext|0s</DataType>
+    <column id="537" parent="520" name="link">
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="537" parent="520" name="password">
+    <column id="538" parent="520" name="name">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-    </column>
-    <column id="538" parent="520" name="is_verified">
-      <DataType>tinyint(1)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
     </column>
     <index id="539" parent="520" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="540" parent="520" name="UNIQ_8D93D649E7927C74">
-      <ColNames>email</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="541" parent="520" name="PRIMARY">
+    <key id="540" parent="520" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="542" parent="520" name="UNIQ_8D93D649E7927C74">
+    <column id="541" parent="521" name="id">
+      <AutoIncrement>3</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="542" parent="521" name="email">
+      <DataType>varchar(180)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="543" parent="521" name="roles">
+      <Comment>(DC2Type:json)</Comment>
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="544" parent="521" name="password">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="545" parent="521" name="is_verified">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="546" parent="521" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="547" parent="521" name="UNIQ_8D93D649E7927C74">
+      <ColNames>email</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="548" parent="521" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="549" parent="521" name="UNIQ_8D93D649E7927C74">
       <UnderlyingIndexName>UNIQ_8D93D649E7927C74</UnderlyingIndexName>
     </key>
   </database-model>
